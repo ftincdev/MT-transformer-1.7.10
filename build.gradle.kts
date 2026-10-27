@@ -6,7 +6,14 @@ plugins {
 }
 
 group = "io.github.ftincdev.ftincdev.mttransformer"
-version = if (project.hasProperty("release")) "0.1" else "0.1-SNAPSHOT"
+
+val baseVersion = "0.1.0"
+
+version = if (project.hasProperty("release")) {
+    "${baseVersion}"
+} else {
+    "${baseVersion}-SNAPSHOT"
+}
 
 repositories {
     mavenCentral()
@@ -32,4 +39,12 @@ tasks.shadowJar {
     archiveClassifier.set("")
     archiveVersion.set("")
     mergeServiceFiles()
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            artifact(tasks.shadowJar)
+        }
+    }
 }
