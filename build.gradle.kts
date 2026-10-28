@@ -4,7 +4,7 @@ plugins {
     id("com.gradleup.shadow") version "9.2.2"
 }
 
-group = "io.github.ftincdev.ftincdev.mttransformer"
+group = "io.github.ftincdev.mttransformer"
 
 val majorVersion = "0"
 val minorVersion = "1"
@@ -26,10 +26,6 @@ dependencies {
     implementation("ch.qos.logback:logback-classic:1.5.3")
 
     testImplementation("org.junit.jupiter:junit-jupiter:5.10.2")
-}
-
-application {
-    mainClass.set("io.github.ftincdev.mttransformer.Main")
 }
 
 tasks.test {
