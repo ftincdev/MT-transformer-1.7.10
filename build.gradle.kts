@@ -6,15 +6,7 @@ plugins {
 
 group = "io.github.ftincdev.mttransformer"
 
-val majorVersion = "0"
-val minorVersion = "1"
-val patchVersion = "0"
-
-version = if (project.hasProperty("release")) {
-    "${majorVersion}.${minorVersion}.${patchVersion}"
-} else {
-    "${majorVersion}.${minorVersion}-SNAPSHOT"
-}
+version = "0.2.0"
 
 repositories {
     mavenCentral()
@@ -33,7 +25,7 @@ tasks.test {
 }
 
 tasks.shadowJar {
-    archiveBaseName.set("MT-Transformer-1.7.10")
+    archiveBaseName.set("MT-transformer-1.7.10")
     archiveClassifier.set("")
     archiveVersion.set("")
     mergeServiceFiles()
